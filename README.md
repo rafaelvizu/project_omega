@@ -11,6 +11,7 @@
 - [os](https://docs.python.org/3/library/os.html)
 - [numpy](https://pypi.org/project/numpy/)
 - [glob](https://docs.python.org/3/library/glob.html)
+- [python-dotenv](https://pypi.org/project/python-dotenv/)
 
 ## Notas
 
