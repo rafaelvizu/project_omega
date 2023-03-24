@@ -1,14 +1,14 @@
 from flask import Flask, Response
 from dotenv import load_dotenv
 import os
-from helpers.HomeHelper import HomeController
+from helpers.FrameHelper import FrameHelper
 
 load_dotenv()
 app = Flask(__name__)
 
 @app.route('/')
 def video_feed():
-    return Response(HomeController.generateFrames(RTSP_URL=os.getenv('RTSP_URL')), 
+    return Response(FrameHelper.generateFrames(os.getenv('RTSP_URL')), 
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
 

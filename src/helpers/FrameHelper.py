@@ -4,7 +4,7 @@ from helpers.simple_facerec import SimpleFacerec
 
 os.environ['OPENCV_FFMPEG_CAPTURE_OPTIONS'] = 'rtsp_transport;udp'
 
-class HomeController():
+class FrameHelper():
      
      @staticmethod
      def generateFrames(RTSP_URL):
