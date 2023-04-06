@@ -1,6 +1,6 @@
 # Project Omega
 
-## Depemndências
+## Dependências
 
 - [Python 3.10](https://www.python.org/downloads/release/python-3110/)
 - [opencv-python](https://pypi.org/project/opencv-python/)
@@ -9,8 +9,6 @@
 - [flask](https://pypi.org/project/Flask/)
 - [opencv-python](https://pypi.org/project/opencv-python/)
 - [os](https://docs.python.org/3/library/os.html)
-- [numpy](https://pypi.org/project/numpy/)
-- [glob](https://docs.python.org/3/library/glob.html)
 - [python-dotenv](https://pypi.org/project/python-dotenv/)
 
 ## Notas
