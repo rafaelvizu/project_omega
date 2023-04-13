@@ -23,7 +23,7 @@ class FrameHelper():
                ret, frame = cap.read()
 
                # detecta as faces
-               face_locations, face_names = self.sfr.detect_known_faces(frame)
+               face_locations, face_names = self.str.detect_known_faces(frame)
 
                for face_loc, name in zip (face_locations, face_names):
                     top, right, bottom, left = face_loc
