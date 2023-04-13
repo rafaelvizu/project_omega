@@ -4,22 +4,26 @@ from helpers.simple_facerec import SimpleFacerec
 
 os.environ['OPENCV_FFMPEG_CAPTURE_OPTIONS'] = 'rtsp_transport;udp'
 
+
 class FrameHelper():
-     
-     @staticmethod
-     def generateFrames(RTSP_URL):
+     def __init__(self, path_to_images):
+          self.path_to_images = path_to_images
+          self.str = SimpleFacerec()
+          self.str.load_encoding_images(path_to_images)
+
+
+     def update_storage(self):
+          self.str.load_encoding_images(self.path_to_images)
+          
+
+     def generateFrames(self, RTSP_URL):
           cap = cv2.VideoCapture(RTSP_URL, cv2.CAP_FFMPEG)
-
-          sfr = SimpleFacerec()
-          # carrega as imagens de teste
-          sfr.load_encoding_images('./storage/imgs')
-
 
           while True:    
                ret, frame = cap.read()
 
                # detecta as faces
-               face_locations, face_names = sfr.detect_known_faces(frame)
+               face_locations, face_names = self.sfr.detect_known_faces(frame)
 
                for face_loc, name in zip (face_locations, face_names):
                     top, right, bottom, left = face_loc
