@@ -2,7 +2,7 @@ import cv2
 import os
 from helpers.simple_facerec import SimpleFacerec
 
-#os.environ['OPENCV_FFMPEG_CAPTURE_OPTIONS'] = 'rtsp_transport;udp'
+os.environ['OPENCV_FFMPEG_CAPTURE_OPTIONS'] = 'rtsp_transport;udp'
 
 
 class FrameController():
@@ -17,8 +17,7 @@ class FrameController():
           
 
      def generateFrames(self, RTSP_URL):
-          #cap = cv2.VideoCapture(RTSP_URL, cv2.CAP_FFMPEG)
-          cap = cv2.VideoCapture(0)
+          cap = cv2.VideoCapture(RTSP_URL, cv2.CAP_FFMPEG)
 
           while True:    
                ret, frame = cap.read()
