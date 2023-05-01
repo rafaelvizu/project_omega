@@ -1,11 +1,11 @@
 from flask import Flask, Response
 from dotenv import load_dotenv
 import os
-from helpers.FrameHelper import FrameHelper
+from controllers.FrameController import FrameController
 
 load_dotenv()
 app = Flask(__name__)
-frameHelper = FrameHelper(os.getenv('PATH_TO_IMAGES'))
+frameHelper = FrameController(os.getenv('PATH_TO_IMAGES'))
 
 @app.route('/')
 def video_feed():
@@ -14,7 +14,7 @@ def video_feed():
 
 @app.route('/update-storage', methods=['GET'])
 def update_storage():
-    frameHelper.update_storage()
+    FrameController.update_storage()
     return 'Storage updated'
 
 

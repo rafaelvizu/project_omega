@@ -5,7 +5,7 @@ from helpers.simple_facerec import SimpleFacerec
 os.environ['OPENCV_FFMPEG_CAPTURE_OPTIONS'] = 'rtsp_transport;udp'
 
 
-class FrameHelper():
+class FrameController():
      def __init__(self, path_to_images):
           self.path_to_images = path_to_images
           self.str = SimpleFacerec()
