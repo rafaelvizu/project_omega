@@ -9,7 +9,7 @@ frameHelper = FrameController(os.getenv('PATH_TO_IMAGES'))
 
 @app.route('/')
 def video_feed():
-    return Response(frameHelper.generateFrames(os.getenv('RTSP_URL')), 
+    return Response(frameHelper.generateFrames(), 
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
 @app.route('/update-storage', methods=['GET'])
