@@ -2,8 +2,6 @@ import cv2
 import os
 from helpers.simple_facerec import SimpleFacerec
 
-os.environ['OPENCV_FFMPEG_CAPTURE_OPTIONS'] = 'rtsp_transport;udp'
-
 
 class FrameController():
      def __init__(self, path_to_images):
@@ -16,8 +14,8 @@ class FrameController():
           self.str.load_encoding_images(self.path_to_images)
           
 
-     def generateFrames(self, RTSP_URL):
-          cap = cv2.VideoCapture(RTSP_URL, cv2.CAP_FFMPEG)
+     def generateFrames(self):
+          cap = cv2.VideoCapture(0)
 
           while True:    
                ret, frame = cap.read()
